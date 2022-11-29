@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: linear-gradient(to left, #F4F39A, #f3f175, #ecea48);
+    background-image: linear-gradient(to left, red, orange, yellow);
     margin: 5% 2%;
   }
 
