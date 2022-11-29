@@ -1,69 +1,35 @@
-const kirjoitus = document.querySelector('.kirjoitusbox')
-const nappi = document.querySelector('.lisaanappi')
-const lista = document.querySelector('.todolista')
-
-function painaNappia(e) {
-    e.preventDefault()
-    addTodo()
-}
-
-// Listätään To Do listaan
-$("#btn2").click(function(){
-    $("ol").append("<li>Appended item</li>");
-  });
-});
-function addTodo() {
-    const kaikkipalat = document.createElement('div')
-    kaikkipalat.classList.add('kaikkipalat')
-
-    const pala = document.createElement('p')
-    pala.classList.add('pala')
-    pala.innerText = kirjoitus.value
-    kaikkipalat.appendChild(pala)
-
-    // Tarkistetaan onko tyhjä ja annetaan varoitus
-    if (kirjoitus.value === '') {
-        alert("Tekstikenttä on tyhjä! Et voi lisätä listausta.")
-    } else {
-
-    const valmisbutton = document.createElement("button")
-    valmisbutton.innerHTML = '<i class="buttontwo"></i>'
-    valmisbutton.classList.add("valmis-button")
-    kaikkipalat.appendChild(valmisbutton)
-
-    const roskabutton = document.createElement("button")
-    roskabutton.innerHTML = '<i class="buttontwo"></i>'
-    roskabutton.classList.add("roska-button")
-    kaikkipalat.appendChild(roskabutton)
-
-    lista.appendChild(kaikkipalat)
-    kirjoitus.value = ''
-    }
-}
-
-// Valmis ja poista toiminnot
-function merkkaa(e) {
-    const pala = e.target
-
-    // Poista
-    if (pala.classList[0] === 'roska-button') {
-        const todolist = pala.parentElement
-        todolist.remove()
-    }
-	
-	//Poista kaikki
-	if (pala.classLisst[0] === 'poistak-button')
-    
-	// Valmis
-    if (pala.classList[0] === 'valmis-button') {
-        const todolist = pala.parentElement
-        todolist.classList.toggle('valmis')
-    }
-	
-	//Valmis kaikki
-	if (pala.classList[0] === 'valmisk-button')
-    
-}
-
-nappi.addEventListener('click', painaNappia)
-lista.addEventListener('click', merkkaa)
+function updateNumbers() {  
+    var lists = document.querySelectorAll("number");  
+    for(var i = 0; i < lists.length; i++) {  
+      $(lists[i]).html(i+1 + ") ");  
+    }  
+}  
+updateNumbers();  
+$("ul").on("click", "li", function () {  
+  $(this).toggleClass("completed");  
+});  
+$("ul").on('click', "span", function (e) {  
+  e.stopPropagation();  
+  $(this).closest("li").fadeOut(500,function() {  
+   $(this).remove();  
+    updateNumbers();  
+  });  
+});  
+$(".removeall").on('click', function (e) {  
+    $("li").fadeOut(500, function() {  
+      $(this).remove();  
+    });  
+});  
+$("input[type='text']").keypress(function(e) {  
+  if(e.which === 13) {  
+    var todoText = $(this).val();  
+    if( $(this).val() !== "") {  
+    $("ul").append("<li> <span> <i class='fa fa-trash'> </i> </span>" + "<number></number>" + todoText + "</li>");  
+      }  
+    updateNumbers();  
+    $(this).val("");  
+  }  
+});  
+$(".add").click(function() {  
+  $("input[type='text']").fadeToggle(200);  
+});  
