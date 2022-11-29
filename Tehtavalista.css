@@ -1,142 +1,228 @@
+body {  
+  background: #093028;   
+background: -webkit-linear-gradient(to left, #093028 , #237A57);   
+background: linear-gradient(to left, #093028 , #237A57);   
+font-family: 'Roboto', sans-serif;  
+  cursor: default;  
+}  
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
-}
+.removeall {  
+  float: right;  
+  font-size: 0.4em;  
+  margin-right: 0%;  
+  line-height: 30px;  
+  padding-left: 1em;  
+  cursor: pointer;  
+}  
+.add {  
+  float:right;  
+  cursor: pointer;  
+}  
+#container {  
+  background: red;  
+  width: 360px;  
+  margin: 100px auto;  
+  box-shadow: 0 0 3px rgba(0,0,0, 1);  
+}  
+h1 {  
+  background: red;  
+  color: white;  
+  margin: 0;  
+  padding: 10px 20px;  
+  text-transform: uppercase;  
+  font-size: 24px;  
+  font-weight: normal;  
+}  
+ul {  
+  list-style: none;  
+  margin: 0;  
+  padding: 0;  
+}  
 
-body {
-    background-image: linear-gradient(to left, red, orange, yellow);
-    margin: 5% 2%;
-  }
-
-/* Otsikko "ToDo" */
-.otsikko {
-    font-size: 25px;
-    text-align: center;
-    margin: 0 0 30px 0;
-    color: white;
-    text-shadow: 3px 1px black;
-}
-
-/* Lista */
-.lisaaSisaltoa {
-    display: grid;
-    column-gap: 5px;
-    grid-template-columns: 60% 10%;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-/* Muotoillaan kirjoitus aluetta */
-.kirjoitusbox {
-    min-height: 50px;
-    height: 50px;
-    max-width: 100%;
-    min-width: 100%;
-    border-radius: 10px;
-    border-color: #333;
-    font-size: 20px;
-    padding: 10px 10px;
-    
-}
-
-/* Muotoillaan lisäys nappia */
-.lisaanappi {
-    border-radius: 10px;
-    border-color: #333;
-    background-color: rgb(246, 250, 0);
-    font-size: 20px;
-    content: "\002B";
-}
-
-
-/* Muotoillaan lisäys nappia hiiren ollessa sen päällä */
-.lisaanappi:hover {
-    background-color: rgb(0, 0, 0);
-    color: white;
-}
-
-/* Muotoillaan listaa */
-.todolista {
-    margin-top: 20px;
-}
-
-/* Muotoillaan javascriptin luomaa listaa */
-.kaikkipalat {
-    display: grid;
-    grid-template-columns: 60% 5% 5%;
-    justify-content: center;
-    margin-bottom: 2px;
-}
-
-/* lista elementtiä ja siihen lisättyjä nappeja */
-.pala, .valmis-button, .roska-button {
-    border: none;
-    background-color: white;
-    min-height: 50px;
-    padding: 10px 10px;
-}
-
-/* Muotoillaan lista elementtiä */
-.pala {
-
-    border-radius: 10px 0 0 10px;
-    display: grid;
-    align-content: center;
-    font-size: 20px;
-}
-
-/* Muotoillaan listaan lisättyjä nappeja */
-.valmis-button, .roska-button {
-    font-size: 15px;
-}
-
-
-.roska-button {
-    border-radius: 0 10px 10px 0;
-    background-color: #b65358;
-    
-}
-
-.roska-button::before {
-    content: '\2573';
-}
-
-.roska-button:hover {
-    background-color: #be000a;
-    color: white;
-}
-
-
-.valmis-button {
-    background-color: #6eb95b;
-}
-
-.valmis-button:hover {
-    background-color: #2ac903;
-    color: white;
-}
-
-.valmis-button::before {
-    content: '\2714';
-}
-
-
-.valmis {
-    text-decoration: line-through;
-}
-
-
-
-button, .valmis-button, .roska-button {
-    cursor: pointer;
-}
-
-.footter{
-	background-image: linear-gradient(to right, white, blue);
-	border-image: linear-gradient(to left, white, blue);
-	border-style: solid;
+h2 {  
+  text-align: center;  
+  font-weight: bold;  
+  color: black;  
+  text-transform: uppercase;  
+  font-size: 2.5em;  
+  white-space: nowrap;  
+  z-index: 1000;  
+  font-family: Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', 'serif'cursive;  
+  @include skew(0, -6.7deg, false);  
+  @include transition-property(font-size);  
+  @include transition-duration(0.5s);  
+}  
+li {  
+  background-color: darkblue;  
+  max-height: 400px;  
+  line-height: 40px;  
+  color:  lightgray;  
+}  
+li:nth-child(2n) {  
+  background-color: lightblue;
+  color: black;
+}  
+ body {  
+  color: #fff;  
+  font-family: 'Raleway';  
+  font-size: 1.6rem;  
+  font-weight: 700;  
+  letter-spacing: 1px;  
+  height: 100vh;  
+  margin: 0;  
+  text-transform: uppercase;  
+}  
+.gradient-background {  
+  background: linear-gradient(10deg,blue, orange, yellow);  
+  background-size: 180% 180%;  
+  animation: gradient-animation 10s ease infinite;  
+}  
+@keyframes gradient-animation {  
+  0% {  
+    background-position: 5% 45%;  
+  }  
+  50% {  
+    background-position: 100% 45%;  
+  }  
+  100% {  
+    background-position: 5% 50%;  
+  }  
+}  
+.button {   
+  background-color: #000;  
+  color: #fff;  
+  position: relative;  
+  width: auto;  
+  display: block;  
+  padding: 14px 30px;  
+  box-sizing: border-box;  
+  float: left;  
+  left: 20%;  
+  transform: translateX(-50%);  
+  font-family: sans-serif;  
+  border-radius: 0 0 12px 12px;  
+  cursor: pointer;  
+  margin-right: 24px;  
+  -webkit-filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, .7));  
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, .7));  
+  z-index: 1;  
+}  
+.button {  
+  -webkit-transition: 0s;  
+  transition: 0s;  
+}  
+.button:before {  
+  -webkit-transition: 0s;  
+  transition: 0s;  
+}  
+.button:after {  
+  -webkit-transition: 0s;  
+  transition: 0s;  
+}  
+.button:before {  
+  content: " ";  
+  width: 24px;  
+  height: 24px;  
+  position: absolute;  
+  border-radius: 50%;  
+  z-index: -10;  
+  pointer-events: none;  
+}  
+.button:after {  
+  content: " ";  
+  width: 24px;  
+  height: 24px;  
+  position: absolute;  
+  border-radius: 50%;  
+  z-index: -10;  
+  pointer-events: none;  
+}  
+.button:before {  
+  left: -36px;  
+  top: -12px;  
+  border-top: 12px solid #000;  
+  border-right: 12px solid transparent;  
+  border-left: 12px solid transparent;  
+  border-bottom: 12px solid transparent;  
+  border-radius: 50%;  
+  transform: rotate(45deg);  
+}  
+.button:after {  
+  right: -36px;  
+  top: -12px;  
+  border-top: 12px solid #000;  
+  border-right: 12px solid transparent;  
+  border-left: 12px solid transparent;  
+  border-bottom: 12px solid transparent;  
+  border-radius: 50%;  
+  -webkit-transform: rotate(-45deg);  
+  -moz-transform: rotate(-45deg);  
+  -o-transform: rotate(-45deg);  
+  transform: rotate(-45deg);  
+}  
+.button:hover {  
+  background-color: pink;  
+  color: #000;  
+}  
+.button:hover:after {  
+  border-top: 12px solid pink;  
+}  
+input {  
+  font-size: 15px;  
+  text-align: center;  
+  letter-spacing: 1px;  
+  background: #a97757;  
+  width: 100%;  
+  border: none;  
+  box-sizing: border-box;  
+  padding: 13px 13px 13px 20px;  
+  color: white;  
+}  
+input:focus {  
+  background: #84593D;  
+  outline: none;  
+  border: 2px solid #84593D;  
+  color: white;  
+}  
+.completed {  
+  text-decoration: line-through;  
+  color: gray;  
+}  
+li:hover {  
+  cursor: pointer;  
+}  
+  
+span {  
+  background: #217353;  
+  height: 40px;  
+  margin-right: 20px;  
+  text-align: center;  
+  color: white;  
+  width: 0px;  
+  display: inline-block;  
+  transition: 0.2s linear;  
+  opacity: 0;  
+}  
+li:hover span {  
+  width: 40px;  
+  opacity: 1;  
+}  
+::-webkit-input-placeholder {   
+    color:  lightgray;  
+}  
+:-moz-placeholder {   
+   color:  lightgray;  
+   opacity:  1;  
+}  
+::-moz-placeholder {   
+   color:  lightgray;  
+   opacity:  1;  
+}  
+:-ms-input-placeholder {   
+   color:  lightgray;  
+}  
+.footer{
 	text-align: center;
+	color: black;
+	
 }
