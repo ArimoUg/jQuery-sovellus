@@ -15,7 +15,7 @@ $("ul").on('click', "span", function (e) {
     updateNumbers();  
   });  
 });  
-$(".removeall").on('click', function (e) {  
+$(".removeall").on('click', function () {  
     $("li").fadeOut(500, function() {  
       $(this).remove();  
     });  
@@ -24,7 +24,7 @@ $("input[type='text']").keypress(function(e) {
   if(e.which === 13) {  
     var todoText = $(this).val();  
     if( $(this).val() !== "") {  
-    $("ul").append("<li> <span> <i class='fa fa-trash'> </i> </span>" + "<number></number>" + todoText + "</li>");  
+    $("ul").append("<li> <span> <i class='tehtava'> </i> </span>" + "<number></number>" + todoText + "</li>");  
       }  
     updateNumbers();  
     $(this).val("");  
@@ -32,4 +32,4 @@ $("input[type='text']").keypress(function(e) {
 });  
 $(".add").click(function() {  
   $("input[type='text']").fadeToggle(200);  
-});  
+});
