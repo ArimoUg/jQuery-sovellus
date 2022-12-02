@@ -1,5 +1,5 @@
 # jQuery-sovellus
-
+Kurrsi tehtävänä oli luoda aikaisemmista JS projekteista jQuery versio.
 Tehtävä lista jquery:ä käyttäen
 netlify: https://guileless-pastelito-6bbaea.netlify.app/
 
